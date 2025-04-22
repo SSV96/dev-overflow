@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { randomUUID } from "crypto";
 import { SheetClose } from "@/components/ui/sheet";
 const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
   const userId = 1;
@@ -56,7 +55,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
             {LinkComponent}
           </SheetClose>
         ) : (
-          <React.Fragment key={item.route}></React.Fragment>
+          <React.Fragment key={item.route}>{LinkComponent}</React.Fragment>
         );
       })}
     </>
